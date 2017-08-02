@@ -1,16 +1,16 @@
 var work = {
     jobs: [{
-        employer: "",
-        title: "",
-        location: "",
-        dates: "",
-        description: ""
+        employer: "God",
+        title: "Web Developer",
+        location: "Jaipur",
+        dates: "2 Aug 2017",
+        description: "Amazing Job"
     }, {
-        employer: "",
-        title: "",
-        location: "",
-        dates: "",
-        description: ""
+        employer: "Google",
+        title: "Web Developer",
+        location: "Jaipur",
+        dates: "2 Aug 2017",
+        description: "Innovating Something Amazing,Serving to humanity"
     }]
 };
 var projects = {
@@ -39,7 +39,7 @@ var bio = {
         twitter: "",
         location: ""
     },
-    skills: [""]
+    skills: ["HTML5","CSS3","JavaScript","Problem Solving"]
 }
 var education = {
     schools: [{
@@ -68,3 +68,19 @@ var education = {
     }]
 
 }
+
+
+if(bio.skills.length > 0){
+  $("#header").append(HTMLskillsStart);
+   $("#skills").append(HTMLskills.replace("%data%",bio.skills));
+}
+
+for(job in work.jobs){
+    $("#workExperience").append(HTMLworkStart);
+    var formattedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
+    var formattedWork = HTMLworkTitle.replace("%data%",work.jobs[job].title);
+    $(".work-entry:last").append(formattedEmployer + formattedWork);
+}
+
+
+
