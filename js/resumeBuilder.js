@@ -1,6 +1,6 @@
 var work = {
     jobs: [{
-        employer: "God",
+        employer: "Amazon",
         title: "Web Developer",
         location: "Jaipur",
         dates: "2 Aug 2017",
@@ -32,39 +32,37 @@ var bio = {
     role: "Web Developer",
     welcomeMessage: "Lets Create A betterworld together",
     biopic: "https://avatars0.githubusercontent.com/u/21344347?v=4&s=460",
-    contact: {
+    contacts: {
         mobile: "+91 8946824714",
         email: "dkiphones620@gmail.com",
         github: "CEOATbetrworld",
         twitter: "betrworld",
-        location: "Jaipur"
+        location: "India"
     },
     skills: ["HTML5", "CSS3", "JavaScript", "Problem Solving"]
 }
 var education = {
     schools: [{
-        name: "",
-        location: "",
-        degreedates: "",
-        url: "",
-        majors: [""]
+        name: "Kendriya Vidyalaya No.1 Jaipur",
+        location: "Jaipur",
+        degreedates: "Completed in 2014",
+        majors: ["Physics","Chemistry","Mathematics"]
     }, {
-        name: "",
-        location: "",
-        degreedates: "",
-        url: "",
-        majors: [""]
+        name: "Swami Keshvanand Institute of Technology, Management & Gramothan (SKIT)",
+        location: "Jaipur",
+        degreedates: "2020",
+        majors: ["Computer Science"]
     }],
     onlineCourses: [{
-        title: "",
-        school: "",
-        dates: "",
-        url: ""
+        title: "Front End Web Developer Nanodegree Co-Created by Google, AT&T, GitHub and Hack Reactor",
+        school: "Udacity",
+        dates: "May 28 2017",
+        url: "https://in.udacity.com/course/front-end-web-developer-nanodegree--nd001/?"
     }, {
-        title: "",
-        school: "",
-        dates: "",
-        url: ""
+        title: "C programming",
+        school: "CodesDope",
+        dates: "Jan 1 2017",
+        url: "https://www.codesdope.com/c-introduction/"
     }]
 
 }
@@ -75,16 +73,37 @@ var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 $("#header").append(HTMLbioPic.replace("%data%", bio.biopic));
-$("#topContacts").append(HTMLmobile.replace("%data%", bio.contact.mobile));
-$("#topContacts").append(HTMLemail.replace("%data%", bio.contact.email));
-$("#topContacts").append(HTMLgithub.replace("%data%", bio.contact.github));
-$("#topContacts").append(HTMLtwitter.replace("%data%", bio.contact.twitter));
-$("#topContacts").append(HTMLlocation.replace("%data%", bio.contact.location));
+$("#topContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
+$("#topContacts").append(HTMLemail.replace("%data%", bio.contacts.email));
+$("#topContacts").append(HTMLgithub.replace("%data%", bio.contacts.github));
+$("#topContacts").append(HTMLtwitter.replace("%data%", bio.contacts.twitter));
+$("#topContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
 $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage))
 if (bio.skills.length > 0) {
     $("#header").append(HTMLskillsStart);
     $("#skills").append(HTMLskills.replace("%data%", bio.skills));
 }
+for(var lc = 0 ;lc < education.schools.length ; lc++){
+    $("#education").append(HTMLschoolStart);
+    $(".education-entry:last").append(HTMLschoolName.replace("%data%",education.schools[lc].name));
+    $(".education-entry:last").append(HTMLschoolLocation.replace("%data%",education.schools[lc].location));
+    $(".education-entry:last").append(HTMLschoolDates.replace("%data%",education.schools[lc].degreedates));
+    $(".education-entry:last").append(HTMLschoolMajor.replace("%data%",education.schools[lc].majors))
+}
+
+for(var lc = 0 ; lc<education.onlineCourses.length ; lc++){
+
+    $(".education-entry:last").append(HTMLonlineTitle.replace("%data%", education.onlineCourses[lc].title));
+  $(".education-entry:last").append(HTMLonlineSchool.replace("%data%", education.onlineCourses[lc].school))
+   $(".education-entry:last").append(HTMLonlineURL.replace("%data%", education.onlineCourses[lc].url))
+}
+
+
+
+
+
+
+
 $(document).click(function(loc) {
     var x = loc.pageX;
     var y = loc.pageY;
