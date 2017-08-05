@@ -14,7 +14,7 @@ var work = {
     }]
 };
 var projects = {
-    projects: [{
+    project: [{
         title: "Decide what you want to do",
         dates: "2017",
         description: "well its really great ",
@@ -39,7 +39,7 @@ var bio = {
         twitter: "betrworld",
         location: "Jaipur"
     },
-    skills: ["HTML5","CSS3","JavaScript","Problem Solving"]
+    skills: ["HTML5", "CSS3", "JavaScript", "Problem Solving"]
 }
 var education = {
     schools: [{
@@ -74,70 +74,53 @@ var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
-$("#header").append(HTMLbioPic.replace("%data%",bio.biopic));
+$("#header").append(HTMLbioPic.replace("%data%", bio.biopic));
 $("#topContacts").append(HTMLmobile.replace("%data%", bio.contact.mobile));
 $("#topContacts").append(HTMLemail.replace("%data%", bio.contact.email));
 $("#topContacts").append(HTMLgithub.replace("%data%", bio.contact.github));
 $("#topContacts").append(HTMLtwitter.replace("%data%", bio.contact.twitter));
 $("#topContacts").append(HTMLlocation.replace("%data%", bio.contact.location));
-$("#header").append(HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage))
-if(bio.skills.length > 0){
-  $("#header").append(HTMLskillsStart);
-   $("#skills").append(HTMLskills.replace("%data%",bio.skills));
+$("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage))
+if (bio.skills.length > 0) {
+    $("#header").append(HTMLskillsStart);
+    $("#skills").append(HTMLskills.replace("%data%", bio.skills));
 }
-$(document).click(function(loc){
-   var x = loc.pageX ;
-   var y = loc.pageY ;
-   logClicks(x,y);
+$(document).click(function(loc) {
+    var x = loc.pageX;
+    var y = loc.pageY;
+    logClicks(x, y);
 });
 
-function inName(name){
+function inName(name) {
     name = name.trim().split(" ");
     console.log(name);
     name[1] = name[1].toUpperCase();
-    name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
-    return name[0] +" "+ name[1];
+    name[0] = name[0].slice(0, 1).toUpperCase() + name[0].slice(1).toLowerCase();
+    return name[0] + " " + name[1];
 }
 
 $("#main").append(internationalizeButton);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-for(var job = 0 ; job <=work.jobs.length ; job++ ){
-    $("#workExperience").append(HTMLworkStart);
-    var formattedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
-    var formattedWork = HTMLworkTitle.replace("%data%",work.jobs[job].title);
-    $(".work-entry:last").append(formattedEmployer + formattedWork);
-    $(".work-entry:last").append(HTMLworkDates.replace("%data%",work.jobs[job].dates));
-    $(".work-entry:last").append(HTMLworkLocation.replace("%data%",work.jobs[job].location));
-    $(".work-entry:last").append(HTMLworkDescription.replace("%data%",work.jobs[job].description));
+projects.display = function() {
+    for (var lc = 0; lc < projects.project.length; lc++) {
+        $("#projects").append(HTMLprojectStart);
+        $(".project-entry:last").append(HTMLprojectTitle.replace("%data%", projects.project[lc].title));
+        $(".project-entry:last").append(HTMLprojectDates.replace("%data%", projects.project[lc].dates));
+        $(".project-entry:last").append(HTMLprojectDescription.replace("%data%", projects.project[lc].description));
+        $(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.project[lc].images))
+    }
 }
+projects.display();
 
 
 
 
+for (var job = 0; job <= work.jobs.length; job++) {
+    $("#workExperience").append(HTMLworkStart);
+    var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+    var formattedWork = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+    $(".work-entry:last").append(formattedEmployer + formattedWork);
+    $(".work-entry:last").append(HTMLworkDates.replace("%data%", work.jobs[job].dates));
+    $(".work-entry:last").append(HTMLworkLocation.replace("%data%", work.jobs[job].location));
+    $(".work-entry:last").append(HTMLworkDescription.replace("%data%", work.jobs[job].description));
+}
