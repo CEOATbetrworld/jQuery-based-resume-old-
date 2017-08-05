@@ -18,7 +18,7 @@ var projects = {
         title: "Decide what you want to do",
         dates: "2017",
         description: "well its really great ",
-        images: ["https://ceoatbetrworld.github.io/images/googlelens.png"]
+        images: ["https://ceoatbetrworld.github.io/images/googlelens.png","https://ceoatbetrworld.github.io/images/googlelens.png"]
     }, {
 
         title: "Artificial Intelligence and Machine Learning",
@@ -107,10 +107,15 @@ projects.display = function() {
         $(".project-entry:last").append(HTMLprojectTitle.replace("%data%", projects.project[lc].title));
         $(".project-entry:last").append(HTMLprojectDates.replace("%data%", projects.project[lc].dates));
         $(".project-entry:last").append(HTMLprojectDescription.replace("%data%", projects.project[lc].description));
-        $(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.project[lc].images))
+        if(projects.project[lc].images.length > 0){
+         for(var li = 0 ; li < projects.project[lc].images.length ; li++ ){
+        $(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.project[lc].images[li]));
+  }
     }
 }
+}
 projects.display();
+$("#mapDiv").append(googleMap)
 
 
 
