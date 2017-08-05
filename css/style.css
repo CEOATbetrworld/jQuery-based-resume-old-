@@ -1,4 +1,6 @@
-
+#projects{
+  background-color: #c5c1c0;
+}
 
 
 body,
@@ -15,6 +17,7 @@ h6 {
   padding: 0;
   margin: 0;
   font-family: "Roboto", sans-serif;
+  color : #1199c3;;
 }
 
 .clear-fix {
@@ -94,7 +97,7 @@ p {
 }
 
 a {
-  color: #1199c3;
+  color: #f7ce3e;
   text-decoration: none;
   margin-top: 10px;
   display: block;
@@ -126,18 +129,18 @@ a {
 }
 
 .gray {
-  background-color: #f3f3f3;
+  background-color: #1a2930;
   padding-bottom: 10px;
   clear: both;
 }
 
 .dark-gray {
-  background-color: #4a4a4a;
+  background-color: #c5c1c0;
 }
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #0a1612;
 }
 
 .flex-box {
@@ -219,6 +222,7 @@ span {
   height: 400px;
   width: 100%;
   padding-bottom: 5%;
+  background-color: #0a1612 ;
 }
 
 @media only screen and (min-width: 750px) {
