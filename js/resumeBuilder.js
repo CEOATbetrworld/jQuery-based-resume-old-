@@ -10,7 +10,7 @@ var bio = {
         twitter: "betrworld",
         location: "India"
     },
-    skills: ["HTML5", "CSS3", "JavaScript", "Problem Solving"]
+    skills: ["JavaScript", "HTML5", "CSS3", "Problem Solving"]
 };
 
 var work = {
@@ -84,7 +84,9 @@ bio.display = function() {
     $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage))
     if (bio.skills.length > 0) {
         $("#header").append(HTMLskillsStart);
-        $("#skills").append(HTMLskills.replace("%data%", bio.skills));
+        for(lc = 0 ; lc < bio.skills.length ; lc++){
+        $("#skills").append(HTMLskills.replace("%data%", bio.skills[lc]));}
+
     }
 }
 bio.display();
