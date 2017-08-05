@@ -11,7 +11,7 @@ var bio = {
         location: "India"
     },
     skills: ["HTML5", "CSS3", "JavaScript", "Problem Solving"]
-}
+};
 
 var work = {
     jobs: [{
@@ -28,6 +28,7 @@ var work = {
         description: "Innovating Something Amazing,Serving to humanity"
     }]
 };
+
 var projects = {
     project: [{
         title: "Decide what you want to do",
@@ -42,9 +43,6 @@ var projects = {
         images: ["https://ceoatbetrworld.github.io/images/googlecar.jpg"]
     }]
 };
-
-
-
 
 var education = {
     schools: [{
@@ -70,7 +68,7 @@ var education = {
         url: "https://www.codesdope.com/c-introduction/"
     }]
 
-}
+};
 
 bio.display = function() {
     var formattedName = HTMLheaderName.replace("%data%", bio.name);
@@ -90,9 +88,6 @@ bio.display = function() {
     }
 }
 bio.display();
-
-
-
 
 work.display = function() {
     for (var job = 0; job < work.jobs.length; job++) {
@@ -141,9 +136,6 @@ education.display = function() {
     }
 }
 
-
-
-
 education.display();
 
 $(document).click(function(loc) {
@@ -160,8 +152,5 @@ function inName(name) {
     name[0] = name[0].slice(0, 1).toUpperCase() + name[0].slice(1).toLowerCase();
     return name[0] + " " + name[1];
 }
-
-
-
 
 $("#main").append(internationalizeButton);
