@@ -1,3 +1,4 @@
+
 var bio = {
     name: "Dhruv Kumar",
     role: "Web Developer",
@@ -81,14 +82,14 @@ bio.display = function() {
     $("#topContacts").append(HTMLgithub.replace("%data%", bio.contacts.github));
     $("#topContacts").append(HTMLtwitter.replace("%data%", bio.contacts.twitter));
     $("#topContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
-    $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage))
+    $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
     if (bio.skills.length > 0) {
         $("#header").append(HTMLskillsStart);
         for(lc = 0 ; lc < bio.skills.length ; lc++){
         $("#skills").append(HTMLskills.replace("%data%", bio.skills[lc]));}
 
     }
-}
+};
 bio.display();
 
 work.display = function() {
@@ -101,7 +102,7 @@ work.display = function() {
         $(".work-entry:last").append(HTMLworkLocation.replace("%data%", work.jobs[job].location));
         $(".work-entry:last").append(HTMLworkDescription.replace("%data%", work.jobs[job].description));
     }
-}
+};
 
 work.display();
 
@@ -117,9 +118,9 @@ projects.display = function() {
             }
         }
     }
-}
+};
 projects.display();
-$("#mapDiv").append(googleMap)
+$("#mapDiv").append(googleMap);
 
 education.display = function() {
     for (var lc = 0; lc < education.schools.length; lc++) {
@@ -127,16 +128,16 @@ education.display = function() {
         $(".education-entry:last").append(HTMLschoolName.replace("%data%", education.schools[lc].name));
         $(".education-entry:last").append(HTMLschoolLocation.replace("%data%", education.schools[lc].location));
         $(".education-entry:last").append(HTMLschoolDates.replace("%data%", education.schools[lc].degreedates));
-        $(".education-entry:last").append(HTMLschoolMajor.replace("%data%", education.schools[lc].majors))
+        $(".education-entry:last").append(HTMLschoolMajor.replace("%data%", education.schools[lc].majors));
     }
 
     for (var lc = 0; lc < education.onlineCourses.length; lc++) {
 
         $(".education-entry:last").append(HTMLonlineTitle.replace("%data%", education.onlineCourses[lc].title));
-        $(".education-entry:last").append(HTMLonlineSchool.replace("%data%", education.onlineCourses[lc].school))
-        $(".education-entry:last").append(HTMLonlineURL.replace("%data%", education.onlineCourses[lc].url))
+        $(".education-entry:last").append(HTMLonlineSchool.replace("%data%", education.onlineCourses[lc].school));
+        $(".education-entry:last").append(HTMLonlineURL.replace("%data%", education.onlineCourses[lc].url));
     }
-}
+};
 
 education.display();
 
@@ -156,3 +157,9 @@ function inName(name) {
 }
 
 $("#main").append(internationalizeButton);
+
+function main() {
+  return 'Hello, World!';
+}
+
+main();
