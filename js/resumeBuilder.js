@@ -50,7 +50,8 @@ var education = {
         name: "Kendriya Vidyalaya No.1 Jaipur",
         location: "Jaipur",
         degreedates: "Completed in 2014",
-        majors: ["Physics", "Chemistry", "Mathematics"]
+        majors: ["Physics", "Chemistry", "Mathematics"],
+        url : "www.kvno1jaipur.org"
     }, {
         name: "Swami Keshvanand Institute of Technology, Management & Gramothan (SKIT)",
         location: "Jaipur",
@@ -125,7 +126,7 @@ $("#mapDiv").append(googleMap);
 education.display = function() {
     for (var lc = 0; lc < education.schools.length; lc++) {
         $("#education").append(HTMLschoolStart);
-        $(".education-entry:last").append(HTMLschoolName.replace("%data%", education.schools[lc].name));
+        $(".education-entry:last").append(HTMLschoolName.replace("%data%", education.schools[lc].name).replace("#",education.schools[lc].url));
         $(".education-entry:last").append(HTMLschoolLocation.replace("%data%", education.schools[lc].location));
         $(".education-entry:last").append(HTMLschoolDates.replace("%data%", education.schools[lc].degreedates));
         $(".education-entry:last").append(HTMLschoolMajor.replace("%data%", education.schools[lc].majors));
@@ -158,8 +159,3 @@ function inName(name) {
 
 $("#main").append(internationalizeButton);
 
-function main() {
-  return 'Hello, World!';
-}
-
-main();
