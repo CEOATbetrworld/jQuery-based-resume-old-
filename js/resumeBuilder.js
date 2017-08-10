@@ -51,12 +51,13 @@ var education = {
         location: "Jaipur",
         degreedates: "Completed in 2014",
         majors: ["Physics", "Chemistry", "Mathematics"],
-        url : "www.kvno1jaipur.org"
+        url : "http://www.kvno1jaipur.org"
     }, {
         name: "Swami Keshvanand Institute of Technology, Management & Gramothan (SKIT)",
         location: "Jaipur",
         degreedates: "2020",
-        majors: ["Computer Science"]
+        majors: ["Computer Science"],
+        url:"http://www.skit.ac.in/"
     }],
     onlineCourses: [{
         title: "Front End Web Developer Nanodegree Co-Created by Google, AT&T, GitHub and Hack Reactor",
@@ -136,7 +137,7 @@ education.display = function() {
 
         $(".education-entry:last").append(HTMLonlineTitle.replace("%data%", education.onlineCourses[lc].title));
         $(".education-entry:last").append(HTMLonlineSchool.replace("%data%", education.onlineCourses[lc].school));
-        $(".education-entry:last").append(HTMLonlineURL.replace("%data%", education.onlineCourses[lc].url));
+        $(".education-entry:last").append(HTMLonlineURL.replace("%data%", education.onlineCourses[lc].url).replace('#',education.onlineCourses[lc].url));
     }
 };
 
