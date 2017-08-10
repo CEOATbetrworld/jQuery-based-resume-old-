@@ -133,11 +133,11 @@ education.display = function() {
         $(".education-entry:last").append(HTMLschoolMajor.replace("%data%", education.schools[lc].majors));
     }
 
-    for (var lc = 0; lc < education.onlineCourses.length; lc++) {
+    for (var i = 0; i < education.onlineCourses.length; i++) {
 
-        $(".education-entry:last").append(HTMLonlineTitle.replace("%data%", education.onlineCourses[lc].title));
-        $(".education-entry:last").append(HTMLonlineSchool.replace("%data%", education.onlineCourses[lc].school));
-        $(".education-entry:last").append(HTMLonlineURL.replace("%data%", education.onlineCourses[lc].url).replace('#',education.onlineCourses[lc].url));
+        $(".education-entry:last").append(HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title));
+        $(".education-entry:last").append(HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school));
+        $(".education-entry:last").append(HTMLonlineURL.replace("%data%", education.onlineCourses[i].url).replace('#',education.onlineCourses[lc].url));
     }
 };
 
