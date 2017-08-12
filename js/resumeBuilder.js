@@ -49,15 +49,17 @@ var education = {
     schools: [{
         name: "Kendriya Vidyalaya No.1 Jaipur",
         location: "Jaipur",
-        degreedates: "Completed in 2014",
+        dates: "Completed in 2014",
         majors: ["Physics", "Chemistry", "Mathematics"],
-        url : "http://www.kvno1jaipur.org"
+        url : "http://www.kvno1jaipur.org",
+        degree: ""
     }, {
         name: "Swami Keshvanand Institute of Technology, Management & Gramothan (SKIT)",
         location: "Jaipur",
-        degreedates: "2020",
+        dates: "2020",
         majors: ["Computer Science"],
-        url:"http://www.skit.ac.in/"
+        url:"http://www.skit.ac.in/",
+        degree: ""
     }],
     onlineCourses: [{
         title: "Front End Web Developer Nanodegree Co-Created by Google, AT&T, GitHub and Hack Reactor",
@@ -79,15 +81,15 @@ bio.display = function() {
     $("#header").prepend(formattedRole);
     $("#header").prepend(formattedName);
     $("#header").append(HTMLbioPic.replace("%data%", bio.biopic));
-    $("#topContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
-    $("#topContacts").append(HTMLemail.replace("%data%", bio.contacts.email));
-    $("#topContacts").append(HTMLgithub.replace("%data%", bio.contacts.github));
-    $("#topContacts").append(HTMLtwitter.replace("%data%", bio.contacts.twitter));
-    $("#topContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
+    $("#topContacts,#footerContacts").append(HTMLmobile.replace("%data%", bio.contacts.mobile));
+    $("#topContacts,#footerContacts").append(HTMLemail.replace("%data%", bio.contacts.email));
+    $("#topContacts,#footerContacts").append(HTMLgithub.replace("%data%", bio.contacts.github));
+    $("#topContacts,#footerContacts").append(HTMLtwitter.replace("%data%", bio.contacts.twitter));
+    $("#topContacts,#footerContacts").append(HTMLlocation.replace("%data%", bio.contacts.location));
     $("#header").append(HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage));
     if (bio.skills.length > 0) {
         $("#header").append(HTMLskillsStart);
-        for(lc = 0 ; lc < bio.skills.length ; lc++){
+        for(var lc = 0 ; lc < bio.skills.length ; lc++){
         $("#skills").append(HTMLskills.replace("%data%", bio.skills[lc]));}
 
     }
@@ -129,7 +131,7 @@ education.display = function() {
         $("#education").append(HTMLschoolStart);
         $(".education-entry:last").append(HTMLschoolName.replace("%data%", education.schools[lc].name).replace("#",education.schools[lc].url));
         $(".education-entry:last").append(HTMLschoolLocation.replace("%data%", education.schools[lc].location));
-        $(".education-entry:last").append(HTMLschoolDates.replace("%data%", education.schools[lc].degreedates));
+        $(".education-entry:last").append(HTMLschoolDates.replace("%data%", education.schools[lc].dates));
         $(".education-entry:last").append(HTMLschoolMajor.replace("%data%", education.schools[lc].majors));
     }
 
@@ -137,7 +139,7 @@ education.display = function() {
 
         $(".education-entry:last").append(HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title));
         $(".education-entry:last").append(HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school));
-        $(".education-entry:last").append(HTMLonlineURL.replace("%data%", education.onlineCourses[i].url).replace('#',education.onlineCourses[lc].url));
+        $(".education-entry:last").append(HTMLonlineURL.replace("%data%", education.onlineCourses[i].url).replace('#',education.onlineCourses[i].url));
     }
 };
 
