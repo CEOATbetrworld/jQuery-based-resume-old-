@@ -132,10 +132,12 @@ education.display = function() {
         $(".education-entry:last").append(HTMLschoolName.replace("%data%", education.schools[lc].name).replace("#",education.schools[lc].url));
         $(".education-entry:last").append(HTMLschoolLocation.replace("%data%", education.schools[lc].location));
         $(".education-entry:last").append(HTMLschoolDates.replace("%data%", education.schools[lc].dates));
-        $(".education-entry:last").append(HTMLschoolMajor.replace("%data%", education.schools[lc].majors));
-    }
 
-    for (var i = 0; i < education.onlineCourses.length; i++) {
+        for(var j = 0 ; j < education.schools[lc].majors.length ; j++){
+        $(".education-entry:last").append(HTMLschoolMajor.replace("%data%", education.schools[lc].majors[j]));
+        }}
+
+ for (var i = 0; i < education.onlineCourses.length; i++) {
 
         $(".education-entry:last").append(HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title));
         $(".education-entry:last").append(HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school));
